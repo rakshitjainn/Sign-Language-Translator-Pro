@@ -23,13 +23,15 @@ A computer vision project that translates hand sign language into text and speec
    ```bash
    git clone [https://github.com/rakshitjainn/Sign-Language-Translator-Pro.git](https://github.com/rakshitjainn/Sign-Language-Translator-Pro.git)
 2. **Install dependencies:**
+    ```bash
     pip install -r requirements.txt
 3. **Run the App:**
+    ```bash
     python main.py
 
 ## 🧠 Engineering Decisions
-    Why Random Forest? I benchmarked a Multi-Layer Perceptron (Neural Net) against a Random Forest. While both achieved ~99% accuracy on the test set, the Random Forest had significantly lower inference time on CPU, making it better suited for real-time video processing on standard laptops.
+**Why Random Forest?** I benchmarked a Multi-Layer Perceptron (Neural Net) against a Random Forest. While both achieved ~99% accuracy on the test set, the Random Forest had significantly lower inference time on CPU, making it better suited for real-time video processing on standard laptops.
 
-    Addressing Drift: To prevent the voice engine from spamming words, I implemented a "Stability Buffer" that requires a sign to be held for 10 consecutive frames (approx 0.3s) before triggering the voice output.
+**Addressing Drift:** To prevent the voice engine from spamming words, I implemented a "Stability Buffer" that requires a sign to be held for 10 consecutive frames (approx 0.3s) before triggering the voice output.
 
-Built by Rakshit Jain
+*Built by Rakshit Jain*
