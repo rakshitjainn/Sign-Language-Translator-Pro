@@ -19,11 +19,12 @@ A computer vision project that translates hand sign language into text and speec
 - **Pyttsx3:** Text-to-speech engine.
 
 ## ⚙️ How to Run
-1. Clone the repo:
-    git clone [https://github.com/rakshitjainn/Sign-Language-Translator-Pro.git](https://github.com/rakshitjainn/Sign-Language-Translator-Pro.git)
-2. Install dependencies:
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/rakshitjainn/Sign-Language-Translator-Pro.git](https://github.com/rakshitjainn/Sign-Language-Translator-Pro.git)
+2. **Install dependencies:**
     pip install -r requirements.txt
-3. Run the App:
+3. **Run the App:**
     python main.py
 
 ## 🧠 Engineering Decisions
