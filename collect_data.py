@@ -39,20 +39,15 @@ while True:
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
             mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
-            
-            # --- THE MAGIC SAUCE: Relative Coordinates ---
             landmarks = []
             for lm in hand_landmarks.landmark:
                 landmarks.append((lm.x, lm.y))
-            
-            # Point 0 is the Wrist. We make it the (0,0) origin.
             wrist_x, wrist_y = landmarks[0]
             
             normalized_landmarks = []
             for x, y in landmarks:
                 normalized_landmarks.extend([x - wrist_x, y - wrist_y])
-            # ---------------------------------------------
-
+            
             key = cv2.waitKey(1) & 0xFF
             class_id = -1
             if key == ord('1'): class_id = 0

@@ -20,7 +20,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 print("\n--- TRAINING STARTED ---")
 
-# --- MODEL 1: Random Forest ---
 print("Training Random Forest...")
 rf_model = RandomForestClassifier(n_estimators=100)
 rf_model.fit(X_train, y_train)
@@ -28,16 +27,13 @@ rf_pred = rf_model.predict(X_test)
 rf_acc = accuracy_score(y_test, rf_pred) * 100
 print(f"Random Forest Accuracy: {rf_acc:.2f}%")
 
-# --- MODEL 2: Neural Network (MLP) ---
 print("Training Neural Network...")
-# A simple network with 2 hidden layers
 nn_model = MLPClassifier(hidden_layer_sizes=(64, 32), max_iter=1000, random_state=42)
 nn_model.fit(X_train, y_train)
 nn_pred = nn_model.predict(X_test)
 nn_acc = accuracy_score(y_test, nn_pred) * 100
 print(f"Neural Network Accuracy: {nn_acc:.2f}%")
 
-# 3. Save the Best Model
 print("\n--- RESULT ---")
 if rf_acc >= nn_acc:
     print(f"Random Forest won! Saving model...")
