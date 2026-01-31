@@ -34,14 +34,7 @@ nn_pred = nn_model.predict(X_test)
 nn_acc = accuracy_score(y_test, nn_pred) * 100
 print(f"Neural Network Accuracy: {nn_acc:.2f}%")
 
-print("\n--- RESULT ---")
-if rf_acc >= nn_acc:
-    print(f"Random Forest won! Saving model...")
-    with open('sign_language_model.pkl', 'wb') as f:
+with open('sign_language_model.pkl', 'wb') as f:
         pickle.dump(rf_model, f)
-else:
-    print(f"Neural Network won! Saving model...")
-    with open('sign_language_model.pkl', 'wb') as f:
-        pickle.dump(nn_model, f)
 
 print("Model saved as 'sign_language_model.pkl'")
